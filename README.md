@@ -1,6 +1,10 @@
 # Pulumi PCI DSS Baseline
 
-Pulumi AWS baseline for PCI-DSS controls, network segmentation, KMS rotation, WAF protection, and immutable audit logging.
+Pulumi AWS baseline for **PCI-DSS-style controls**, network segmentation, KMS rotation, WAF protection, and immutable audit logging.
+
+> **What this repo proves**
+>
+> This is not just infrastructure code. It is a compliance-legible platform baseline that can be previewed locally before cloud credentials ever enter the picture.
 
 ## Why this repo is good
 
