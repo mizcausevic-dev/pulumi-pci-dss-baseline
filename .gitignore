@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.pulumi/
+.tmp-*.log
+coverage/
+screenshots/*.html
+.DS_Store

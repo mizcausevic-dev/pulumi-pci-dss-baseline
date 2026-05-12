@@ -1,0 +1,39 @@
+{
+  "name": "pulumi-pci-dss-baseline",
+  "version": "1.0.0",
+  "description": "Pulumi AWS baseline for PCI-DSS controls, network segmentation, KMS rotation, WAF, and immutable audit logging.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "tsx --test tests/**/*.test.ts",
+    "preview:local": "powershell -ExecutionPolicy Bypass -File ./scripts/preview-local.ps1",
+    "verify": "npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizcausevic-dev/pulumi-pci-dss-baseline.git"
+  },
+  "keywords": [
+    "pulumi",
+    "aws",
+    "pci-dss",
+    "iac",
+    "security"
+  ],
+  "author": "Miz Causevic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizcausevic-dev/pulumi-pci-dss-baseline/issues"
+  },
+  "homepage": "https://github.com/mizcausevic-dev/pulumi-pci-dss-baseline#readme",
+  "dependencies": {
+    "@pulumi/aws": "^7.12.0",
+    "@pulumi/pulumi": "^3.116.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,12 @@
+config:
+  pulumi-pci-dss-baseline:region: us-east-1
+  pulumi-pci-dss-baseline:organizationName: northstar-payments
+  pulumi-pci-dss-baseline:environmentName: dev
+  pulumi-pci-dss-baseline:offlineMode: "true"
+  pulumi-pci-dss-baseline:approvedIngressCidrs:
+    - 203.0.113.0/24
+    - 198.51.100.0/24
+  pulumi-pci-dss-baseline:alertEmail: security-ops@northstar-payments.example
+  pulumi-pci-dss-baseline:vpcCidr: 10.34.0.0/16
+  aws:region: us-east-1
+encryptionsalt: v1:QQG8+9s8AEE=:v1:oSMAjotk3UJm5Ezc:YQ4CBcGy0oomkPyU/TZFIwjaiDfFQw==
