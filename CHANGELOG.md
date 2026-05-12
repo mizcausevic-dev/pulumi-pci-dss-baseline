@@ -1,70 +1,40 @@
-﻿# Changelog
+# Changelog
 
 All notable changes to this project are documented here.
-
-This log is intentionally written as an engineering record rather than a launch theater timeline. Dates reflect when the concept, design, prototype, and public packaging phases were mature enough to document.
 
 ## [1.0.0] - 2026-05-12
 
 ### Released
-- Published **pulumi-pci-dss-baseline** as a public, portfolio-grade platform governance system.
-- Packaged the current implementation, documentation, validation workflow, and proof surfaces into a repo that could be reviewed by engineering, product, and operating stakeholders.
-- Tightened the repo story around the real-world operating problem: policy drift, observability blind spots, latency pressure, and fragmented control evidence.
+- Published **pulumi-pci-dss-baseline** as the fintech infrastructure-and-controls companion to the event and observability repos.
+- Packaged AWS segmentation, KMS rotation, WAF posture, audit logging, and offline-friendly preview flow into one operator-readable IaC story.
+- Positioned the repo around compliance-grade platform intent, not just cloud resource assembly.
 
 ### Why this mattered
-- Existing approaches in monitoring, SIEM, CI, and governance tools were useful for adjacent workflows.
-- They still missed the core need: a unified operator view that connected policy, evidence, and action under pressure.
-- This release made the repo readable as an operational capability rather than a narrow technical demo.
+- Many infrastructure examples can provision AWS resources. Far fewer explain why those resources matter for PCI-DSS-style control review.
+- Security and platform teams often need credible previews before they can justify live credentials or deployment access.
+- This release made the repo useful as a platform-engineering narrative rather than a Pulumi syntax sample.
 
-## [0.1.0] - 2026-02-18
+## [0.1.0] - 2026-02-10
 
 ### Shipped
-- Cut the first coherent internal version of the product shape behind **pulumi-pci-dss-baseline**.
-- Standardized the core objects, decision surfaces, and operator outputs around the repo's main working problem.
-- Established the first reviewable version of the architecture described as: Pulumi AWS baseline for PCI-DSS controls, network segmentation, KMS rotation, WAF, and immutable audit logging.
+- Standardized the first internal stack plan for segmented networking, key-management posture, and immutable audit paths.
+- Added an offline preview mode so the repo could be evaluated without cloud access.
 
-### Notes
-- This milestone was less about polish and more about proving the operating model.
-- The emphasis was on turning a messy domain problem into something a real team could reason about in CI, review, or day-to-day operations.
-
-## [Prototype] - 2025-04-14
+## [Prototype] - 2025-05-03
 
 ### Built
-- Created the first runnable prototype for the repo's core workflow and decision model.
-- Started validating the design against real operating pressures instead of idealized sample flows.
-- Added enough shape to test whether the project could surface action, not just information.
+- Built the first stack model around PCI-DSS-like control goals rather than around generic AWS primitives.
+- Used the prototype to test whether compliance intent could stay visible in code and docs.
 
-### Problem pressure
-- The prototype phase was shaped by concrete issues such as policy drift, observability blind spots, latency pressure, and fragmented control evidence.
-- This was the point where the project moved from a sketch into something worth hardening.
-
-## [Design Phase] - 2023-01-11
+## [Design Phase] - 2024-01-29
 
 ### Designed
-- Defined the core philosophy for the system:
-  - operator-first
-  - decision-legible
-  - CI- and review-friendly
-  - suitable for mixed technical and business audiences
-- Chose outputs that would make the repo useful to real operators instead of just visually impressive.
-- Focused the design on explainability, evidence, and next-best action rather than passive reporting.
+- Chose an infrastructure-governance framing over a raw provisioning tutorial.
+- Treated previewability and reviewability as first-class features.
+- Kept the stack legible for security stakeholders, not just IaC practitioners.
 
-### Rejected approaches
-- Avoided turning the repo into a generic dashboard or CRUD exercise.
-- Avoided thin wrapper patterns that would hide the actual operating problem behind fashionable tooling choices.
-
-## [Idea Origin] - 2022-02-11
+## [Idea Origin] - 2023-04-15
 
 ### Observed
-- The initial idea surfaced while looking at how teams were handling policy drift, observability blind spots, latency pressure, and fragmented control evidence.
-- The recurring pattern was that people could often see fragments of the problem, but not the whole operational story in one place.
-
-### Insight
-- The missing product was not another point solution. It was a clearer operating layer that made the work legible to platform, security, and reliability teams.
-- That insight became the basis for **pulumi-pci-dss-baseline**.
-
-## [Background Signals] - 2022-08-09
-
-### Context
-- Earlier platform, governance, and operator-tooling work made one pattern obvious: the dangerous systems are rarely the ones with no controls at all. They are the ones where controls exist, but are fragmented, weakly owned, and hard to read under pressure.
-- That pattern shaped this project long before the public repo existed.
+- The idea emerged from repeated cases where cloud controls were technically present but operationally hard to inspect quickly.
+- The missing artifact was a baseline that explained security posture in the same place it declared it.

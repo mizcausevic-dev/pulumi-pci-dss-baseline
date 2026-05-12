@@ -1,19 +1,20 @@
-﻿# Why We Built This
+# Why We Built This
 
-**pulumi-pci-dss-baseline** started from a recurring operating problem in platform governance. Teams were collecting more data and more system state, but the decision layer around that data was still fragile under pressure. Teams could collect raw signals, but still struggle to answer the harder questions under pressure: what is actually drifting, who owns the next move, and how much business or control risk is building underneath the technical state.
+**pulumi-pci-dss-baseline** started from a recurring infrastructure problem: teams could often stand up cloud environments quickly, but the control story around those environments was much harder to review. Security posture might exist across tickets, architecture diagrams, cloud consoles, and internal runbooks, while the infrastructure code itself mostly answered a different question: what got provisioned, not why the control model should be trusted.
 
-In this case the pressure showed up around policy drift, observability blind spots, latency pressure, and fragmented control evidence. That sounds specific, but the underlying failure mode was familiar. A team would have multiple tools in place, each doing a piece of the job. There might be observability, validation, ticketing, dashboards, static analysis, workflow software, or spreadsheet-based reporting. None of that meant the operating problem was actually solved. What was usually missing was a clear translation layer between system behavior and accountable action.
+That disconnect shows up sharply in payment-adjacent environments. The technical challenge is not just creating networks, keys, logging, and edge controls. It is making segmentation intent, auditability, key-management posture, and review boundaries understandable to the people who sign off on risk. Too many examples stop at "here is the stack." They do not help an operator, security lead, or reviewer inspect whether the stack expresses the right control logic.
 
-That was the opening for **pulumi-pci-dss-baseline**. The repo was designed around a simple idea: operators need more than visibility. They need evidence, priorities, and next actions that make sense under pressure. That is why the project is framed as platform governance rather than as a generic app demo. The point is not just to show that data can be rendered or APIs can be wired together. The point is to show what a practical control surface looks like when the audience is platform, security, and reliability teams.
+We built **pulumi-pci-dss-baseline** to close that gap. The repo is meant to feel like a compliance-legible platform baseline, not a raw IaC demo. That is why the documentation, stack structure, and offline preview workflow all matter. The project tries to show what responsible platform code looks like when the audience is not only a developer applying a change, but also a security stakeholder trying to understand the blast radius and control posture of that change.
 
-Existing tools missed the mark for understandable reasons. The available tooling landscape - monitoring, SIEM, CI, and governance tools - helped with record-keeping, scanning, reporting, or workflow coverage. What it still missed was a unified operator view that connected policy, evidence, and action under pressure. In other words, the gap was not capability in isolation. The gap was operational coherence. The team responsible for day-to-day decisions still had to reconstruct the story manually.
+Existing tools helped, but they were fragmented. AWS gives strong primitives. Pulumi gives strong composition. Security services provide strong individual features. What was still missing was a concise, inspectable baseline that connected those pieces into a narrative about network segmentation, KMS key rotation, WAF posture, and immutable audit logging. Without that narrative, even a good stack can be hard to evaluate quickly.
 
-That shaped the design philosophy from the start:
+That shaped the design philosophy:
 
-- **operator-first** so the most important signal is the one that gets surfaced first
-- **decision-legible** so a security lead, platform operator, product owner, or business stakeholder can understand why a recommendation exists
-- **CI-native** so the checks and narratives can live close to where systems are built, changed, and reviewed
+- **control-intent first** so the repo explains the why behind the resources
+- **review-friendly** so security teams can assess the design without reverse-engineering it
+- **offline-capable** so the stack can be evaluated before cloud credentials are involved
+- **platform-native** so the code still feels like something an internal platform team could extend
 
-That philosophy also explains what this repo does not try to be. It is not a vague "AI platform," not a one-off research prototype, and not a thin wrapper around a fashionable stack. It is a targeted attempt to model a real operating layer around this problem: Pulumi AWS baseline for PCI-DSS controls, network segmentation, KMS rotation, WAF, and immutable audit logging.
+The repo also avoids pretending that compliance is solved by resource counts alone. The point is not "more AWS." The point is a baseline whose architecture, preview flow, and documentation all reinforce the same security story.
 
-What comes next is practical. The roadmap is about pushing the project deeper into real operational utility: historical baselines, export adapters, stronger policy authoring, and richer fleet-level visibility. That direction matters because the long-term value of **pulumi-pci-dss-baseline** is not the individual screen or endpoint. It is the operating discipline behind it. The point of the repo is to make that operating layer visible enough to review, improve, and trust.
+Next on the roadmap is deeper control mapping, stronger drift-review workflows, and clearer extension patterns for broader AWS environments. The long-term value of **pulumi-pci-dss-baseline** is that it makes infrastructure controls readable enough to discuss before they become incidents or audit findings.
