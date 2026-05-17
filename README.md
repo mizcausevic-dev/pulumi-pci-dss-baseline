@@ -35,7 +35,7 @@ Pulumi AWS baseline for **PCI-DSS-style controls**, network segmentation, KMS ro
 ## Local validation
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\pulumi-pci-dss-baseline"
+cd pulumi-pci-dss-baseline
 npm install
 npm run build
 npm run test
@@ -46,7 +46,7 @@ npm run test
 Pulumi CLI is supported, but the stack is configured for offline-friendly preview first.
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\pulumi-pci-dss-baseline"
+cd pulumi-pci-dss-baseline
 npm install
 npm run preview:local
 ```
