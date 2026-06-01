@@ -29,7 +29,7 @@
   "homepage": "https://github.com/mizcausevic-dev/pulumi-pci-dss-baseline#readme",
   "dependencies": {
     "@pulumi/aws": "^7.12.0",
-    "@pulumi/pulumi": "^3.116.1"
+    "@pulumi/pulumi": "^3.244.0"
   },
   "devDependencies": {
     "@types/node": "^24.8.1",
